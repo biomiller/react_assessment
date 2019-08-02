@@ -9,13 +9,14 @@ import {
 export class Register extends Component {
 
 
-    constructor(){
+    constructor() {
         super();
         this.state = {
             email: "",
-            password:"",
-            password2:"",
-            username:""
+            password: "",
+            password2: "",
+            username: "",
+            status:""
         }
     }
 
@@ -38,15 +39,21 @@ export class Register extends Component {
         axios
             .post("http://localhost:5000/user/createUser", newUser)
             .then(response => {
-                this.props.getData();
-                console.log("Added new user.")
-                this.setState({
-                    username: response.data.username,
-                    email: response.data.email,
-                    password: response.data.password,
-                    password2: response.data.password2,
-                })
-                console.log(this.state)
+                console.log(response);
+                if (response.data.Status === "Account successfully created") {
+                    this.props.userLoggedIn(username);
+                    this.setState({
+                        status:"Successfully created new user: " + username
+                    })
+
+                } else {
+                    this.setState({
+                        username: response.data.username,
+                        email: response.data.email,
+                        password: response.data.password,
+                        password2: response.data.password2,
+                    })
+                }
             })
             .catch(err => { console.log(err) })
     }
@@ -54,20 +61,23 @@ export class Register extends Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                
+
                 <input required type="text" placeholder="Username"></input>
                 <p>{this.state.username}</p>
-                
+
                 <input required type="email" placeholder="email"></input>
                 <p>{this.state.email}</p>
-                
+
                 <input required type="password" placeholder="Password"></input>
                 <p>{this.state.password}</p>
-                
+
                 <input required type="password" placeholder="Repeat Password"></input>
                 <p>{this.state.password2}</p>
-                
+
                 <Button type="submit">Submit</Button>
+
+                <br></br>
+                <p>{this.state.status}</p>
 
             </form>
 
