@@ -1,5 +1,8 @@
 # Week 12 React Assessment
 
+![component_hierarchy](https://github.com/biomiller/react_assessment/blob/master/wirefames/component_hierarchy.png)
+
+
 ## Requirements:
 
 _A mongoDB database:_
