@@ -1,26 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import axios from "axios";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { TopNavbar } from "./components/TopNavbar.js";
+import { UserList } from "./components/UserList.js"
+
+
+class App extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      data: []
+    }
+  }
+
+  getData = () => {
+    axios
+      .get("http://localhost:5000/user/all")
+      .then(response => {
+        this.setState({
+          data: response.data.reverse()
+        });
+        console.log(this.state.data)
+      });
+  };
+
+  componentDidMount = () => {
+    this.getData()
+  }
+
+  render() {
+    return (
+      <div>
+        <Router>
+
+          <TopNavbar />
+
+          <Route exact path={`/`} render={() => <h1>Home Page</h1>} />
+          <Route exact path={`/ViewUsers`} render={() => <UserList data={this.state.data} />} />
+
+
+
+        </Router>
+      </div>
+    );
+  }
 }
 
 export default App;
