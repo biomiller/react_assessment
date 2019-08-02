@@ -23,6 +23,12 @@ https://nodejs.org/en/download/
 
 ## Run the node back end server:
 
+This can be found here:
+
+https://github.com/Matt25969/node_user_login
+
+`git clone https://github.com/Matt25969/node_user_login`
+
 `cd node_user_login`
 
 Install dependencies:
