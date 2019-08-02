@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`is TopNavbar rendered 1`] = `
+<div>
+  <nav
+    className="navbar navbar-expand-md navbar-light bg-light"
+  >
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      <a
+        className="navbar-brand"
+      >
+        React Assessment
+      </a>
+    </a>
+    <a
+      className="navbar-brand"
+    />
+    <ul
+      className="nav"
+    >
+      <li
+        className="nav-item"
+      >
+        <a
+          href="/Register"
+          onClick={[Function]}
+        >
+          <button
+            aria-label={null}
+            className="btn btn-secondary"
+            onClick={[Function]}
+          >
+            Register
+          </button>
+        </a>
+        <a
+          href="/Login"
+          onClick={[Function]}
+        >
+          <button
+            aria-label={null}
+            className="btn btn-secondary"
+            onClick={[Function]}
+          >
+            Login
+          </button>
+        </a>
+        <a
+          href="/ViewUsers"
+          onClick={[Function]}
+        >
+          <button
+            aria-label={null}
+            className="btn btn-secondary"
+            onClick={[Function]}
+          >
+            View Users
+          </button>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;

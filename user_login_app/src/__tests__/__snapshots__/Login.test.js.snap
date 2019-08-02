@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`is Login rendered 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <h1>
+    Login
+  </h1>
+  <input
+    placeholder="Username"
+    required={true}
+    type="text"
+  />
+  <p>
+    
+  </p>
+  <input
+    placeholder="Password"
+    required={true}
+    type="password"
+  />
+  <p>
+    
+  </p>
+  <button
+    aria-label={null}
+    className="btn btn-secondary"
+    onClick={[Function]}
+    type="submit"
+  >
+    Submit
+  </button>
+  <br />
+  <p>
+    
+  </p>
+</form>
+`;

@@ -3,14 +3,17 @@ import renderer from 'react-test-renderer';
 
 import { MemoryRouter } from 'react-router-dom';
 
-import { TopNavbar } from "../components/TopNavbar.js";
+import { User } from "../components/User.js";
 
 
-it('is TopNavbar rendered', () => {
+it('is User rendered', () => {
+
+    const user={username:"Test"}
+
     const component = renderer
     .create(
       <MemoryRouter>
-        <TopNavbar />
+        <User user={user} />
       </MemoryRouter>
     )
     .toJSON();

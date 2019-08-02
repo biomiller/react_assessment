@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`is User rendered 1`] = `
+<div>
+  <h3>
+    Test
+  </h3>
+</div>
+`;
