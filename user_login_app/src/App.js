@@ -4,6 +4,8 @@ import axios from "axios";
 
 import { TopNavbar } from "./components/TopNavbar.js";
 import { UserList } from "./components/UserList.js"
+import { Register } from "./components/Register.js"
+
 
 
 class App extends Component {
@@ -39,6 +41,7 @@ class App extends Component {
 
           <Route exact path={`/`} render={() => <h1>Home Page</h1>} />
           <Route exact path={`/ViewUsers`} render={() => <UserList data={this.state.data} />} />
+          <Route exact path={`/Register`} render={() => <Register getData={this.getData} />} />
 
 
 
