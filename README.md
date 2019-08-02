@@ -31,6 +31,10 @@ https://github.com/Matt25969/node_user_login
 
 `cd node_user_login`
 
+Use the 'improved' branch:
+
+`git checkout improved`
+
 Install dependencies:
 
 `npm install`
