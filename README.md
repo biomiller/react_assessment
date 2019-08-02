@@ -57,6 +57,10 @@ Run the react app:
 
 `npm start`
 
+Run the tests:
+
+`npm test -- --coverage
+
 # Open in browser:
 
 Navigate to `http://localhost:3000/` in Chrome.
