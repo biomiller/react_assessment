@@ -55,16 +55,16 @@ export class Register extends Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 
-                <input type="text" placeholder="Username"></input>
+                <input required type="text" placeholder="Username"></input>
                 <p>{this.state.username}</p>
                 
-                <input type="email" placeholder="email"></input>
+                <input required type="email" placeholder="email"></input>
                 <p>{this.state.email}</p>
                 
-                <input type="password" placeholder="Password"></input>
+                <input required type="password" placeholder="Password"></input>
                 <p>{this.state.password}</p>
                 
-                <input type="password" placeholder="Repeat Password"></input>
+                <input required type="password" placeholder="Repeat Password"></input>
                 <p>{this.state.password2}</p>
                 
                 <Button type="submit">Submit</Button>

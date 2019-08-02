@@ -13,11 +13,12 @@ import { Link } from "react-router-dom";
 
 import 'bootstrap/dist/css/bootstrap.css';
 
-export function TopNavbar() {
+export function TopNavbar(props) {
     return (
         <div>
             <Navbar color="light" light expand="md">
                 <Link to={`/`}><NavbarBrand>React Assessment</NavbarBrand></Link>
+                <NavbarBrand>Logged in: {props.loggedIn}</NavbarBrand>
                 <Nav>
                     <NavItem>
                         <Link to={`/Register`}><Button>Register</Button></Link>

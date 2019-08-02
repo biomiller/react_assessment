@@ -2,9 +2,15 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import axios from "axios";
 
+import {
+  Col
+} from 'reactstrap';
+
 import { TopNavbar } from "./components/TopNavbar.js";
 import { UserList } from "./components/UserList.js"
 import { Register } from "./components/Register.js"
+import { Login } from "./components/Login.js"
+
 
 
 
@@ -13,6 +19,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      loggedIn: "",
       data: []
     }
   }
@@ -28,6 +35,13 @@ class App extends Component {
       });
   };
 
+  userLoggedIn = (username) => {
+    this.setState({
+      loggedIn: username
+    })
+    console.log(this.state.loggedIn);
+  }
+
   componentDidMount = () => {
     this.getData()
   }
@@ -37,12 +51,14 @@ class App extends Component {
       <div>
         <Router>
 
-          <TopNavbar />
+          <TopNavbar loggedIn={this.state.loggedIn} />
 
-          <Route exact path={`/`} render={() => <h1>Home Page</h1>} />
-          <Route exact path={`/ViewUsers`} render={() => <UserList data={this.state.data} />} />
-          <Route exact path={`/Register`} render={() => <Register getData={this.getData} />} />
-
+          <Col md="3">
+            <Route exact path={`/`} render={() => <h1>Home Page</h1>} />
+            <Route exact path={`/ViewUsers`} render={() => <UserList data={this.state.data} />} />
+            <Route exact path={`/Register`} render={() => <Register getData={this.getData} />} />
+            <Route exact path={`/Login`} render={() => <Login getData={this.getData} userLoggedIn={this.userLoggedIn} />} />
+          </Col>
 
 
         </Router>
