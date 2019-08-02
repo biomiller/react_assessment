@@ -1,10 +1,18 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
+import { MemoryRouter } from 'react-router-dom';
+
 import { App } from '../App.js';
 
 it('is app rendered', () => {
-  const tree=renderer.create(<App />).toTree();
+  const component = renderer
+  .create(
+    <MemoryRouter>
+      <App />
+    </MemoryRouter>
+  )
+  .toJSON();
 
-  expect(tree).toMatchSnapshot();
+  expect(component).toMatchSnapshot();
 })

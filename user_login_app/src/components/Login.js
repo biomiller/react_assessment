@@ -8,7 +8,6 @@ import {
 
 export class Login extends Component {
 
-
     constructor() {
         super();
         this.state = {
@@ -29,7 +28,8 @@ export class Login extends Component {
             .then(response => {
                 if (response.data.Status === "Not Logged In") {
                     this.setState({
-                        password: "Incorrect password.",
+                        username: "",
+                        password: "Incorrect password."
                     });
                 } else if (response.data.Status === "Logged In"){
                     this.props.userLoggedIn(username);
@@ -44,6 +44,7 @@ export class Login extends Component {
                 console.log(err);
                 this.setState({
                     username: "User not found.",
+                    password: ""
                 })
             })
     }
@@ -51,6 +52,8 @@ export class Login extends Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
+
+                <h1>Login</h1>
 
                 <input required type="text" placeholder="Username"></input>
                 <p>{this.state.username}</p>

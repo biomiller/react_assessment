@@ -42,6 +42,7 @@ export class Register extends Component {
                 console.log(response);
                 if (response.data.Status === "Account successfully created") {
                     this.props.userLoggedIn(username);
+                    this.props.getData();
                     this.setState({
                         status:"Successfully created new user: " + username
                     })
@@ -61,6 +62,8 @@ export class Register extends Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
+
+                <h1>Register</h1>
 
                 <input required type="text" placeholder="Username"></input>
                 <p>{this.state.username}</p>

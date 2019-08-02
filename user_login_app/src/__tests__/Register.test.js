@@ -3,14 +3,14 @@ import renderer from 'react-test-renderer';
 
 import { MemoryRouter } from 'react-router-dom';
 
-import { TopNavbar } from "../components/TopNavbar.js";
+import { Register } from "../components/Register.js";
 
 
-it('is TopNavbar rendered', () => {
+it('is Register rendered', () => {
     const component = renderer
     .create(
       <MemoryRouter>
-        <TopNavbar />
+        <Register />
       </MemoryRouter>
     )
     .toJSON();
