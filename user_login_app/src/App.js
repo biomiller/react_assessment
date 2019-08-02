@@ -14,12 +14,12 @@ import { Login } from "./components/Login.js"
 
 
 
-class App extends Component {
+export class App extends Component {
 
   constructor() {
     super();
     this.state = {
-      loggedIn: "",
+      loggedIn: "Hello Guest",
       data: []
     }
   }
@@ -37,9 +37,8 @@ class App extends Component {
 
   userLoggedIn = (username) => {
     this.setState({
-      loggedIn: username
+      loggedIn: "Hello " + username
     })
-    console.log(this.state.loggedIn);
   }
 
   componentDidMount = () => {
@@ -56,7 +55,7 @@ class App extends Component {
           <Col md="3">
             <Route exact path={`/`} render={() => <h1>Home Page</h1>} />
             <Route exact path={`/ViewUsers`} render={() => <UserList data={this.state.data} />} />
-            <Route exact path={`/Register`} render={() => <Register getData={this.getData} />} />
+            <Route exact path={`/Register`} render={() => <Register getData={this.getData} userLoggedIn={this.userLoggedIn} />} />
             <Route exact path={`/Login`} render={() => <Login getData={this.getData} userLoggedIn={this.userLoggedIn} />} />
           </Col>
 

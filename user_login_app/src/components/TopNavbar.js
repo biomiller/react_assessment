@@ -18,7 +18,7 @@ export function TopNavbar(props) {
         <div>
             <Navbar color="light" light expand="md">
                 <Link to={`/`}><NavbarBrand>React Assessment</NavbarBrand></Link>
-                <NavbarBrand>Logged in: {props.loggedIn}</NavbarBrand>
+                <NavbarBrand>{props.loggedIn}</NavbarBrand>
                 <Nav>
                     <NavItem>
                         <Link to={`/Register`}><Button>Register</Button></Link>

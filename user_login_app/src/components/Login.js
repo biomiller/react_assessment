@@ -27,7 +27,6 @@ export class Login extends Component {
         axios
             .get(`http://localhost:5000/user/name/${username}/${password}`)
             .then(response => {
-                console.log(response);
                 if (response.data.Status === "Not Logged In") {
                     this.setState({
                         password: "Incorrect password.",
@@ -40,7 +39,6 @@ export class Login extends Component {
                         login: "Successfully logged in."
                     });
                 }
-                console.log(this.state);
             })
             .catch(err => {
                 console.log(err);
